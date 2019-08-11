@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.android.gpasystem.MainActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="sem1" type="float"/>
+        <variable name="sem2" type="float"/>
+        <variable name="sem3" type="float"/>
+        <variable name="sem4" type="float"/>
+
+
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+  >
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:orientation="horizontal"
+       android:layout_height="wrap_content">
+
+       <TextView
+           android:layout_width="0dp"
+           android:text="@string/sem1"
+           android:layout_weight="0.25"
+           android:layout_height="wrap_content" />
+       <TextView
+           android:layout_width="0dp"
+           android:text="@{String.valueOf(sem1)}"
+           android:layout_weight="0.25"
+           android:layout_height="wrap_content" />
+       <EditText
+           android:id="@+id/ed1"
+           android:layout_width="0dp"
+           android:layout_weight="0.25"
+           android:layout_height="wrap_content"
+           android:inputType="numberDecimal" />
+       <Button
+           android:id="@+id/bt1"
+           android:layout_width="0dp"
+           android:layout_weight="0.25"
+           android:text="@string/save"
+           android:contentDescription="@string/save"
+           android:layout_height="wrap_content" />
+   </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:text="@string/sem2"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:text="@{String.valueOf(sem2)}"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/ed2"
+            android:inputType="numberDecimal"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/bt2"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:text="@string/save"
+            android:contentDescription="@string/save"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:text="@string/sem3"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:text="@{String.valueOf(sem3)}"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/ed3"
+            android:inputType="numberDecimal"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/bt3"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:text="@string/save"
+            android:contentDescription="@string/save"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:text="@string/sem4"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:text="@{String.valueOf(sem4)}"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/ed4"
+            android:layout_width="0dp"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/bt4"
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:text="@string/save"
+            android:contentDescription="@string/save"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GPA System</string>
+    <string name="save">Save</string>
+    <string name="sem1">I Sem</string>
+    <string name="sem2">II Sem</string>
+    <string name="sem3">III Sem</string>
+    <string name="sem4">IV Sem</string>
+
+</resources>
