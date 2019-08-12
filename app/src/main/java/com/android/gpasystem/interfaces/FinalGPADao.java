@@ -24,8 +24,8 @@ public interface FinalGPADao {
     @Query("SELECT count(*) from finalgpa")
     int getCount();
 
-    @Query("DELETE FROM finalgpa where num=:num")
-    void deleteSem(int num);
+//    @Query("DELETE FROM finalgpa where num=:num")
+//    void deleteSem(int num);
 
     @Update
     void updateSem(FinalGPA gpa);

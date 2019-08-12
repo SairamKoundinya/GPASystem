@@ -4,138 +4,801 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.android.gpasystem.MainActivity"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
     <data>
-        <variable name="sem1" type="float"/>
-        <variable name="sem2" type="float"/>
-        <variable name="sem3" type="float"/>
-        <variable name="sem4" type="float"/>
+        <variable name="viewmodel" type="com.android.gpasystem.viewmodel.FinalGPAVM"/>
+
+
 
 
     </data>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-  >
-
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:orientation="horizontal"
-       android:layout_height="wrap_content">
-
-       <TextView
-           android:layout_width="0dp"
-           android:text="@string/sem1"
-           android:layout_weight="0.25"
-           android:layout_height="wrap_content" />
-       <TextView
-           android:layout_width="0dp"
-           android:text="@{String.valueOf(sem1)}"
-           android:layout_weight="0.25"
-           android:layout_height="wrap_content" />
-       <EditText
-           android:id="@+id/ed1"
-           android:layout_width="0dp"
-           android:layout_weight="0.25"
-           android:layout_height="wrap_content"
-           android:inputType="numberDecimal" />
-       <Button
-           android:id="@+id/bt1"
-           android:layout_width="0dp"
-           android:layout_weight="0.25"
-           android:text="@string/save"
-           android:contentDescription="@string/save"
-           android:layout_height="wrap_content" />
-   </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        android:orientation="vertical"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="0dp"
-            android:text="@string/sem2"
-            android:layout_weight="0.25"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:layout_width="0dp"
-            android:text="@{String.valueOf(sem2)}"
-            android:layout_weight="0.25"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:id="@+id/ed2"
-            android:inputType="numberDecimal"
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/bt2"
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:text="@string/save"
-            android:contentDescription="@string/save"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
+            android:layout_margin="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="0dp"
-            android:text="@string/sem3"
-            android:layout_weight="0.25"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:layout_width="0dp"
-            android:text="@{String.valueOf(sem3)}"
-            android:layout_weight="0.25"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:id="@+id/ed3"
-            android:inputType="numberDecimal"
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/bt3"
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:text="@string/save"
-            android:contentDescription="@string/save"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="0.5"
+                android:layout_height="0dp">
+                <TextView
+                    android:text="@string/overall_g_p_a"
+                    android:textStyle="italic"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"/>
+                <TextView
+                    android:id="@+id/cgpa"
+                   android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:text="@string/sem4"
-            android:layout_weight="0.25"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:layout_width="0dp"
-            android:text="@{String.valueOf(sem4)}"
-            android:layout_weight="0.25"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:id="@+id/ed4"
-            android:layout_width="0dp"
-            android:inputType="numberDecimal"
-            android:layout_weight="0.25"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/bt4"
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:text="@string/save"
-            android:contentDescription="@string/save"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                android:layout_height="0dp">
+                <TextView
+                    android:text="@string/aggregate"
+                    android:textStyle="italic"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"/>
+                <TextView
+                    android:id="@+id/percen"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"/>
 
+            </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:orientation="horizontal"
+           android:layout_height="110dp">
+            <!--Sem 1-->
+            <android.support.v7.widget.CardView
+                app:cardBackgroundColor="@color/c1"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+               android:layout_margin="15dp"
+               >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.8"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:textColor="@color/white1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.3"
+                            android:gravity="center"
+                            android:text="@string/semester_1"
+                            />
+
+                        <TextView
+                            android:textColor="@color/white1"
+                            android:id="@+id/tx1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:layout_weight="0.7"
+
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:orientation="vertical"
+                        android:layout_weight="0.2"
+                        android:layout_height="match_parent">
+
+
+                        <ImageView
+                            android:tint="@color/white1"
+                            android:contentDescription="@string/empty"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/open"
+                            android:layout_weight="0.3"
+                            android:layout_height="0dp" />
+                         <ImageView
+                             android:tint="@color/white1"
+                             android:id="@+id/edit1"
+                             android:layout_width="match_parent"
+                             android:layout_weight="0.3"
+                             android:contentDescription="@string/edit"
+                            android:onClick="change1"
+                             android:src="@drawable/edit"
+
+                             android:layout_height="0dp" />
+                        <ImageView
+                            android:tint="@color/white1"
+                            android:id="@+id/del1"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.4"
+                            android:onClick="@{() -> viewmodel.delete(1)}"
+                            android:contentDescription="@string/delete"
+                            android:src="@drawable/delete"
+
+                            android:layout_height="0dp" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+           <android.support.v7.widget.CardView
+               android:layout_width="0dp"
+               app:cardBackgroundColor="@color/c2"
+               android:layout_weight="0.5"
+               android:layout_height="match_parent"
+               android:layout_margin="15dp"
+               >
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:orientation="horizontal"
+                   android:layout_height="match_parent"
+                   android:baselineAligned="false">
+
+                   <LinearLayout
+                       android:layout_width="0dp"
+                       android:layout_weight="0.8"
+                       android:orientation="vertical"
+                       android:layout_height="match_parent">
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="0dp"
+                           android:textColor="@color/white1"
+                           android:layout_weight="0.3"
+                           android:gravity="center"
+                           android:text="@string/semester_2"
+                           />
+
+                       <TextView
+                           android:id="@+id/tx2"
+                           android:textColor="@color/white1"
+                           android:layout_width="match_parent"
+                           android:layout_height="0dp"
+                           android:gravity="center"
+                           android:textSize="24sp"
+                           android:textStyle="bold"
+                           android:layout_weight="0.7"
+
+                           />
+
+
+                   </LinearLayout>
+                   <LinearLayout
+                       android:layout_width="0dp"
+                       android:orientation="vertical"
+                       android:layout_weight="0.2"
+                       android:layout_height="match_parent">
+
+                       <ImageView
+                           android:tint="@color/white1"
+                           android:contentDescription="@string/empty"
+                           android:layout_width="match_parent"
+                           android:src="@drawable/open"
+                           android:layout_weight="0.3"
+                           android:layout_height="0dp" />
+                       <ImageView
+                           android:tint="@color/white1"
+                           android:id="@+id/edit2"
+                           android:layout_width="match_parent"
+                           android:layout_weight="0.3"
+                           android:onClick="change2"
+                           android:contentDescription="@string/edit"
+                           android:src="@drawable/edit"
+                           android:layout_height="0dp" />
+                       <ImageView
+                           android:tint="@color/white1"
+                           android:id="@+id/del2"
+                           android:layout_width="match_parent"
+                           android:layout_weight="0.4"
+                           android:onClick="@{() -> viewmodel.delete(2)}"
+                           android:contentDescription="@string/delete"
+                           android:src="@drawable/delete"
+                           android:layout_height="0dp" />
+
+
+                   </LinearLayout>
+
+               </LinearLayout>
+
+
+           </android.support.v7.widget.CardView>
+
+       </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="110dp">
+            <!--Sem 1-->
+            <android.support.v7.widget.CardView
+                app:cardBackgroundColor="@color/c3"
+
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.8"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:textColor="@color/white1"
+                            android:layout_weight="0.3"
+                            android:gravity="center"
+                            android:text="@string/semester_3"
+                            />
+
+                        <TextView
+                            android:textColor="@color/white1"
+                            android:id="@+id/tx3"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:layout_weight="0.7"
+
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:orientation="vertical"
+                        android:layout_weight="0.2"
+                        android:layout_height="match_parent">
+
+
+                        <ImageView
+                            android:tint="@color/white1"
+                            android:contentDescription="@string/empty"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/open"
+                            android:layout_weight="0.3"
+                            android:layout_height="0dp" />
+                        <ImageView
+                            android:tint="@color/white1"
+                            android:id="@+id/edit3"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.3"
+                            android:onClick="change3"
+                            android:contentDescription="@string/edit"
+                            android:src="@drawable/edit"
+                            android:layout_height="0dp" />
+                        <ImageView
+                            android:tint="@color/white1"
+                            android:id="@+id/del3"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.4"
+                            android:onClick="@{() -> viewmodel.delete(3)}"
+                            android:contentDescription="@string/delete"
+                            android:src="@drawable/delete"
+                            android:layout_height="0dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                app:cardBackgroundColor="@color/c4"
+
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.8"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:textColor="@color/white1"
+                            android:layout_weight="0.3"
+                            android:gravity="center"
+                            android:text="@string/semester_4"
+                            />
+
+                        <TextView
+                            android:id="@+id/tx4"
+                            android:textColor="@color/white1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:layout_weight="0.7"
+
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:orientation="vertical"
+                        android:layout_weight="0.2"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:tint="@color/white1"
+                            android:contentDescription="@string/empty"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/open"
+                            android:layout_weight="0.3"
+                            android:layout_height="0dp" />
+                        <ImageView
+                            android:tint="@color/white1"
+                            android:id="@+id/edit4"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.3"
+                            android:onClick="change4"
+                            android:contentDescription="@string/edit"
+
+                            android:src="@drawable/edit"
+                            android:layout_height="0dp" />
+                        <ImageView
+                            android:tint="@color/white1"
+                            android:id="@+id/del4"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.4"
+                            android:onClick="@{() -> viewmodel.delete(4)}"
+                            android:contentDescription="@string/delete"
+                            android:src="@drawable/delete"
+                            android:layout_height="0dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="110dp">
+            <!--Sem 1-->
+            <android.support.v7.widget.CardView
+                app:cardBackgroundColor="@color/c5"
+
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.8"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textColor="@color/white5"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.3"
+                            android:gravity="center"
+                            android:text="@string/semester_5"
+                            />
+                        <TextView
+                            android:id="@+id/tx5"
+                                android:textColor="@color/white5"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:layout_weight="0.7"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:orientation="vertical"
+                        android:layout_weight="0.2"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:tint="@color/white5"
+                            android:contentDescription="@string/empty"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/open"
+                            android:layout_weight="0.3"
+                            android:layout_height="0dp" />
+                        <ImageView
+                            android:tint="@color/white5"
+                            android:id="@+id/edit5"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.3"
+                            android:onClick="change5"
+                            android:contentDescription="@string/edit"
+                            android:src="@drawable/edit"
+                            android:layout_height="0dp" />
+                        <ImageView
+                            android:tint="@color/white5"
+                            android:id="@+id/del5"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.4"
+                            android:onClick="@{() -> viewmodel.delete(5)}"
+                            android:contentDescription="@string/delete"
+                            android:src="@drawable/delete"
+                            android:layout_height="0dp" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                app:cardBackgroundColor="@color/c6"
+
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.8"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:textColor="@color/white5"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.3"
+                            android:gravity="center"
+                            android:text="@string/semester_6"
+                            />
+
+                        <TextView
+                            android:textColor="@color/white5"
+                            android:textSize="24sp"
+                            android:id="@+id/tx6"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:layout_weight="0.7"
+
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:orientation="vertical"
+                        android:layout_weight="0.2"
+                        android:layout_height="match_parent">
+
+
+                        <ImageView
+                            android:tint="@color/white5"
+                            android:contentDescription="@string/empty"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/open"
+                            android:layout_weight="0.3"
+                            android:layout_height="0dp" />
+                        <ImageView
+                            android:tint="@color/white5"
+                            android:id="@+id/edit6"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.3"
+                            android:onClick="change6"
+                            android:contentDescription="@string/edit"
+                            android:src="@drawable/edit"
+                            android:layout_height="0dp" />
+                        <ImageView
+                            android:tint="@color/white5"
+                            android:id="@+id/del6"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.4"
+                            android:onClick="@{() -> viewmodel.delete(6)}"
+                            android:contentDescription="@string/delete"
+                            android:src="@drawable/delete"
+                            android:layout_height="0dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="110dp">
+            <!--Sem 1-->
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                app:cardBackgroundColor="@color/c7"
+
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.8"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.3"
+                            android:gravity="center"
+                            android:textColor="@color/white5"
+                            android:text="@string/semester_7"
+                            />
+
+                        <TextView
+                            android:id="@+id/tx7"
+                            android:textColor="@color/white5"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:layout_weight="0.7"
+
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:orientation="vertical"
+                        android:layout_weight="0.2"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:tint="@color/white5"
+                            android:contentDescription="@string/empty"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/open"
+                            android:layout_weight="0.3"
+                            android:layout_height="0dp" />
+                        <ImageView
+                            android:tint="@color/white5"
+                            android:id="@+id/edit7"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.3"
+                            android:onClick="change7"
+                            android:contentDescription="@string/edit"
+                            android:src="@drawable/edit"
+                            android:layout_height="0dp" />
+                        <ImageView
+                            android:tint="@color/white5"
+                            android:id="@+id/del7"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.4"
+                            android:onClick="@{() -> viewmodel.delete(7)}"
+                            android:contentDescription="@string/delete"
+                            android:src="@drawable/delete"
+                            android:layout_height="0dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                app:cardBackgroundColor="@color/c8"
+
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.8"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.3"
+                            android:gravity="center"
+                            android:textColor="@color/white5"
+                            android:text="@string/semester_8"
+                            />
+
+                        <TextView
+                            android:id="@+id/tx8"
+                            android:textColor="@color/white5"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:layout_weight="0.7"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:orientation="vertical"
+                        android:layout_weight="0.2"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:tint="@color/white5"
+                            android:contentDescription="@string/empty"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/open"
+                            android:layout_weight="0.3"
+                            android:layout_height="0dp" />
+                        <ImageView
+                            android:tint="@color/white5"
+                            android:id="@+id/edit8"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.3"
+                            android:onClick="change8"
+                            android:contentDescription="@string/edit"
+                            android:src="@drawable/edit"
+                            android:layout_height="0dp" />
+                        <ImageView
+                            android:tint="@color/white5"
+                            android:id="@+id/del8"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.4"
+                            android:contentDescription="@string/delete"
+                            android:src="@drawable/delete"
+                            android:onClick="@{() -> viewmodel.delete(8)}"
+                            android:layout_height="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
 </LinearLayout>
+    </ScrollView>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:text="Cummulative GPA"-->
+            <!--android:textColor="@color/colorPrimary"-->
+            <!--android:textSize="16dp"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintHorizontal_bias="0.2"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintRight_toRightOf="parent" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:text="00.00 / 10"-->
+            <!--android:textColor="@color/colorSecondary"-->
+            <!--android:textSize="16dp"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintHorizontal_bias="0.8"-->
+            <!--app:layout_constraintStart_toStartOf="parent" />-->
+
 </layout>
+<!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical"-->
+  <!--&gt;-->
+
+   <!--<LinearLayout-->
+       <!--android:layout_width="match_parent"-->
+       <!--android:orientation="horizontal"-->
+       <!--android:layout_height="wrap_content">-->
+
+       <!--<TextView-->
+           <!--android:layout_width="0dp"-->
+           <!--android:text="@string/sem1"-->
+           <!--android:layout_weight="0.25"-->
+           <!--android:layout_height="wrap_content" />-->
+       <!--<TextView-->
+           <!--android:layout_width="0dp"-->
+           <!--android:text="@{String.valueOf(sem1)}"-->
+           <!--android:layout_weight="0.25"-->
+           <!--android:layout_height="wrap_content" />-->
+       <!--<EditText-->
+           <!--android:id="@+id/ed1"-->
+           <!--android:layout_width="0dp"-->
+           <!--android:layout_weight="0.25"-->
+           <!--android:layout_height="wrap_content"-->
+           <!--android:inputType="numberDecimal" />-->
+       <!--<Button-->
+           <!--android:id="@+id/bt1"-->
+           <!--android:layout_width="0dp"-->
+           <!--android:layout_weight="0.25"-->
+           <!--android:text="@string/save"-->
+           <!--android:onClick="@{() -> viewmodel.update(1,Float.parseFloat(edt1.getText().toString()))}"-->
+           <!--android:contentDescription="@string/save"-->
+           <!--android:layout_height="wrap_content" />-->
+   <!--</LinearLayout>-->

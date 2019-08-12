@@ -24,6 +24,10 @@ import com.android.gpasystem.model.FinalGPA;
             mDao.insert(new FinalGPA(2,0.0f));
             mDao.insert(new FinalGPA(3,0.0f));
             mDao.insert(new FinalGPA(4,0.0f));
+            mDao.insert(new FinalGPA(5,0.0f));
+            mDao.insert(new FinalGPA(6,0.0f));
+            mDao.insert(new FinalGPA(7,0.0f));
+            mDao.insert(new FinalGPA(8,0.0f));
         }
         return null;
     }

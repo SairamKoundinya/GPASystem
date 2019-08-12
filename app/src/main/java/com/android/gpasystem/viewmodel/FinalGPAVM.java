@@ -3,6 +3,7 @@ package com.android.gpasystem.viewmodel;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
+import android.util.Log;
 
 import com.android.gpasystem.model.FinalGPA;
 import com.android.gpasystem.repos.FinalGPARepo;
@@ -28,7 +29,12 @@ public class FinalGPAVM extends AndroidViewModel {
 
     public LiveData<List<FinalGPA>> getAllGpa() { return mAllgpa; }
 
-    public void update(int num,float gpa) { mRepository.update(num,gpa); }
+    public void update(int num,float gpa) {
+
+        mRepository.update(num,gpa);
+    }
+
+    public void delete(int num){ mRepository.update(num,0.0f);}
 }
 
 

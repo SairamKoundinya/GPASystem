@@ -5,5 +5,19 @@
     <string name="sem2">II Sem</string>
     <string name="sem3">III Sem</string>
     <string name="sem4">IV Sem</string>
+    <string name="semester_1">Semester 1</string>
+    <string name="edit">edit</string>
+    <string name="delete">delete</string>
+    <string name="cancel">cancel</string>
+    <string name="semester_2">Semester 2</string>
+    <string name="semester_3">Semester 3</string>
+    <string name="semester_4">Semester 4</string>
+    <string name="semester_5">Semester 5</string>
+    <string name="semester_6">Semester 6</string>
+    <string name="semester_8">Semester 8</string>
+    <string name="empty">empty</string>
+    <string name="semester_7">Semester 7</string>
+    <string name="overall_g_p_a">Overall G.P.A</string>
+    <string name="aggregate">Aggregate(%)</string>
 
 </resources>
