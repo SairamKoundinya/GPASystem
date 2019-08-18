@@ -13,8 +13,6 @@ import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.android.gpasystem.databinding.ActivityMainBinding;
 import com.android.gpasystem.model.FinalGPA;
@@ -35,43 +33,16 @@ public class MainActivity extends AppCompatActivity {
         binding= DataBindingUtil.setContentView(this,R.layout.activity_main);
 
         viewModel = ViewModelProviders.of(this).get(FinalGPAVM.class);
-      //  binding.setViewmodel(viewModel);
 
         viewModel.getAllGpa().observe(this, new Observer<List<FinalGPA>>() {
             @Override
             public void onChanged(@Nullable final List<FinalGPA> allgpa) {
-                // Update the cached copy of the words in the adapter.
-               // Log.d("checks",String.valueOf(allgpa.size()));
+
                 if(allgpa.size()!=0)
                    setTextValues(allgpa);
             }
         });
 
-//        binding.bt1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                viewModel.update(1,Float.parseFloat(binding.ed1.getText().toString()));
-//            }
-//        });
-//        binding.bt2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                viewModel.update(2,Float.parseFloat(binding.ed2.getText().toString()));
-//            }
-//        });
-//        binding.bt3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                viewModel.update(3,Float.parseFloat(binding.ed3.getText().toString()));
-//            }
-//        });
-//        binding.bt4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                viewModel.update(4,Float.parseFloat(binding.ed4.getText().toString()));
-//            }
-//        });
 
     }
 
@@ -130,39 +101,6 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
-//    public void change1(View v){
-//
-//        getGPA(1);
-//    }
-//    public void change2(View v){
-//
-//        getGPA("Semester 2 EditBox","Enter here sem2 G.P.A",2);
-//    }
-//    public void change3(View v){
-//
-//        getGPA("Semester 3 EditBox","Enter here sem3 G.P.A",3);
-//    }
-//    public void change4(View v){
-//
-//        getGPA("Semester 4 EditBox","Enter here sem4 G.P.A",4);
-//    }
-//
-//    public void change5(View v){
-//
-//        getGPA("Semester 5 EditBox","Enter here sem5 G.P.A",5);
-//    }
-//    public void change6(View v){
-//
-//        getGPA("Semester 6 EditBox","Enter here sem6 G.P.A",6);
-//    }
-//    public void change7(View v){
-//
-//        getGPA("Semester 7 EditBox","Enter here sem7 G.P.A",7);
-//    }
-//    public void change8(View v){
-//
-//        getGPA("Semester 8 EditBox","Enter here sem8 G.P.A",8);
-//    }
 
     }
 
