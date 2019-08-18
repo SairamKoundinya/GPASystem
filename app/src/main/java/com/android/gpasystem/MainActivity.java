@@ -35,13 +35,13 @@ public class MainActivity extends AppCompatActivity {
         binding= DataBindingUtil.setContentView(this,R.layout.activity_main);
 
         viewModel = ViewModelProviders.of(this).get(FinalGPAVM.class);
-        binding.setViewmodel(viewModel);
+      //  binding.setViewmodel(viewModel);
 
         viewModel.getAllGpa().observe(this, new Observer<List<FinalGPA>>() {
             @Override
             public void onChanged(@Nullable final List<FinalGPA> allgpa) {
                 // Update the cached copy of the words in the adapter.
-                Log.d("checks",String.valueOf(allgpa.size()));
+               // Log.d("checks",String.valueOf(allgpa.size()));
                 if(allgpa.size()!=0)
                    setTextValues(allgpa);
             }
@@ -111,13 +111,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void getGPA(String title,String msg,final int num){
+    public void getGPA(View v){
+        final int num=Integer.parseInt(v.getTag().toString());
         final AlertDialog.Builder builder=new AlertDialog.Builder(this);
         final EditText view=(EditText)getLayoutInflater().inflate(R.layout.editdialog,null);
-        builder.setTitle(title);
-        builder.setMessage(msg);
+        builder.setTitle("Semester "+num+" EditBox");
+        builder.setMessage("Enter here sem"+num+" G.P.A");
         builder.setView(view);
-        builder.setIcon(R.drawable.edit);
         builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -130,38 +130,39 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
-    public void change1(View v){
-
-        getGPA("Semester 1 EditBox","Enter here sem1 G.P.A",1);
-    }
-    public void change2(View v){
-
-        getGPA("Semester 2 EditBox","Enter here sem2 G.P.A",2);
-    }
-    public void change3(View v){
-
-        getGPA("Semester 3 EditBox","Enter here sem3 G.P.A",3);
-    }
-    public void change4(View v){
-
-        getGPA("Semester 4 EditBox","Enter here sem4 G.P.A",4);
-    }
-    public void change5(View v){
-
-        getGPA("Semester 5 EditBox","Enter here sem5 G.P.A",5);
-    }
-    public void change6(View v){
-
-        getGPA("Semester 6 EditBox","Enter here sem6 G.P.A",6);
-    }
-    public void change7(View v){
-
-        getGPA("Semester 7 EditBox","Enter here sem7 G.P.A",7);
-    }
-    public void change8(View v){
-
-        getGPA("Semester 8 EditBox","Enter here sem8 G.P.A",8);
-    }
+//    public void change1(View v){
+//
+//        getGPA(1);
+//    }
+//    public void change2(View v){
+//
+//        getGPA("Semester 2 EditBox","Enter here sem2 G.P.A",2);
+//    }
+//    public void change3(View v){
+//
+//        getGPA("Semester 3 EditBox","Enter here sem3 G.P.A",3);
+//    }
+//    public void change4(View v){
+//
+//        getGPA("Semester 4 EditBox","Enter here sem4 G.P.A",4);
+//    }
+//
+//    public void change5(View v){
+//
+//        getGPA("Semester 5 EditBox","Enter here sem5 G.P.A",5);
+//    }
+//    public void change6(View v){
+//
+//        getGPA("Semester 6 EditBox","Enter here sem6 G.P.A",6);
+//    }
+//    public void change7(View v){
+//
+//        getGPA("Semester 7 EditBox","Enter here sem7 G.P.A",7);
+//    }
+//    public void change8(View v){
+//
+//        getGPA("Semester 8 EditBox","Enter here sem8 G.P.A",8);
+//    }
 
     }
 

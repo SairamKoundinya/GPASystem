@@ -34,7 +34,8 @@ public class FinalGPAVM extends AndroidViewModel {
         mRepository.update(num,gpa);
     }
 
-    public void delete(int num){ mRepository.update(num,0.0f);}
+
+   // public void delete(int num){ mRepository.update(num,0.0f);}
 }
 
 
