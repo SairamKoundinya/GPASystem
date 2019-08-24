@@ -19,5 +19,10 @@
     <string name="semester_7">Semester 7</string>
     <string name="overall_g_p_a">Overall G.P.A</string>
     <string name="aggregate">Aggregate(%)</string>
+    <string name="left">Left</string>
+    <string name="right">right</string>
+    <string name="subject_name">Subject Name</string>
+    <string name="g">G</string>
+    <string name="c">C</string>
 
 </resources>

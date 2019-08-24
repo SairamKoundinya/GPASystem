@@ -35,8 +35,6 @@ public class FinalGPARepo {
         new insertAsyncTask(mgpadao).execute(new FinalGPA(num,gpa));
     }
 
-
-
     private static class insertAsyncTask extends AsyncTask<FinalGPA, Void, Void> {
 
         private FinalGPADao mAsyncTaskDao;

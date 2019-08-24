@@ -42,8 +42,7 @@ dependencies {
 
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     implementation 'android.arch.lifecycle:viewmodel:1.1.1'
-   // implementation files('libs/activation.jar')
-
+    // implementation files('libs/activation.jar')
 
 //    compile 'com.android.support:multidex:1.0.3'
 //    implementation fileTree(dir: 'libs', include: ['*.jar'])

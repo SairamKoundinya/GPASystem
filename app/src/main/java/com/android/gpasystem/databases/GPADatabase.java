@@ -1,9 +1,5 @@
 package com.android.gpasystem.databases;
 
-/**
- * Created by Admin on 8/10/2019.
- */
-
 import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
@@ -12,13 +8,24 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.android.gpasystem.interfaces.FinalGPADao;
+import com.android.gpasystem.interfaces.SemesterGPADao;
 import com.android.gpasystem.model.FinalGPA;
+import com.android.gpasystem.model.SemesterGPAModel;
 
 
-@Database(entities = {FinalGPA.class}, version = 1, exportSchema = false)
+@Database(entities = {FinalGPA.class , SemesterGPAModel.class}, version = 1, exportSchema = false)
 public abstract class GPADatabase extends RoomDatabase {
 
     public abstract FinalGPADao finalgpaDao();
+    public abstract SemesterGPADao sem1gpaDao();
+    public abstract SemesterGPADao sem2gpaDao();
+    public abstract SemesterGPADao sem3gpaDao();
+    public abstract SemesterGPADao sem4gpaDao();
+    public abstract SemesterGPADao sem5gpaDao();
+    public abstract SemesterGPADao sem6gpaDao();
+    public abstract SemesterGPADao sem7gpaDao();
+    public abstract SemesterGPADao sem8gpaDao();
+
 
     private static volatile GPADatabase INSTANCE;
 

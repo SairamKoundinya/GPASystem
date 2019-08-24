@@ -1,6 +1,5 @@
 package com.android.gpasystem;
 
-
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
@@ -42,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
                    setTextValues(allgpa);
             }
         });
-
-
     }
 
     private void setTextValues(final List<FinalGPA> allgpa) {
