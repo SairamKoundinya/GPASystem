@@ -6,10 +6,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
-
-import com.android.gpasystem.SemesterGPA;
 import com.android.gpasystem.model.SemesterGPAModel;
-
 import java.util.List;
 
 /**
@@ -21,21 +18,21 @@ public interface SemesterGPADao {
     @Insert
     void insert(SemesterGPAModel gpa);
 
-    @Query("SELECT count(*) from sgpa")
-   int getCount();
+    @Query("SELECT count(*) from sgpa where sumnum=:sumnum")
+    int getCount(int sumnum);
 
-   @Query("DELETE FROM sgpa where id=:id")
-   void deleteSem(int id);
+    @Query("DELETE FROM sgpa where id=:id and sumnum=:sumnum")
+    void deleteSem(int id,int sumnum);
 
-    @Query("update sgpa set subname=:subname where id=:id")
-    void updateSubname(int id,String subname);
+    @Query("update sgpa set subname=:subname where id=:id and sumnum=:sumnum")
+    void updateSubname(int id, String subname,int sumnum);
 
-    @Query("update sgpa set marks=:marks where id=:id")
-    void updateMarks(int id,int marks);
+    @Query("update sgpa set marks=:marks where id=:id and sumnum=:sumnum")
+    void updateMarks(int id,int marks,int sumnum);
 
-    @Query("update sgpa set credits=:credits where id=:id")
-    void updateCredits(int id,int credits);
+    @Query("update sgpa set credits=:credits where id=:id and sumnum=:sumnum")
+    void updateCredits(int id,int credits,int sumnum);
 
-    @Query("SELECT * from sgpa")
-    List<SemesterGPAModel> getSGpa();
+    @Query("SELECT * from sgpa where sumnum=:sumnum")
+    LiveData<List<SemesterGPAModel>> getSGpa(int sumnum);
 }

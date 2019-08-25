@@ -5,6 +5,7 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.util.Log;
 
+import com.android.gpasystem.interfaces.SemesterGPADao;
 import com.android.gpasystem.model.FinalGPA;
 import com.android.gpasystem.model.SemesterGPAModel;
 import com.android.gpasystem.repos.FinalGPARepo;
@@ -21,15 +22,17 @@ public class SGPAVM extends AndroidViewModel {
 
     private SGPARepo mRepository;
 
-    private List<SemesterGPAModel> mAllgpa;
+    private LiveData<List<SemesterGPAModel>> mAllgpa;
 
-    public SGPAVM (Application application,int i) {
+     SGPAVM (Application application,int i) {
         super(application);
-        mRepository = new SGPARepo(application,i);
-        mAllgpa = mRepository.getSGpa();
+            mRepository = new SGPARepo(application,i);
+         mAllgpa = mRepository.getSGpa();
     }
 
-    public List<SemesterGPAModel> getAllGpa() { return mAllgpa; }
+    public LiveData<List<SemesterGPAModel>> getAllGpa() {
+
+         return mAllgpa; }
 
     public void updateSubname(int id,String subname) {
 

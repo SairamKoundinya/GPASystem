@@ -3,6 +3,7 @@ package com.android.gpasystem;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.gpasystem.databinding.ActivityMainBinding;
 import com.android.gpasystem.model.FinalGPA;
@@ -99,7 +101,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void moveIntent(View view) {
+
+        Intent it=new Intent(this,SemesterGPA.class);
+        it.putExtra("sem",view.getTag().toString());
+        startActivity(it);
     }
+}
 
 
 

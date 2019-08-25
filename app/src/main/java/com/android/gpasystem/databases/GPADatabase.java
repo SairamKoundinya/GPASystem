@@ -17,15 +17,7 @@ import com.android.gpasystem.model.SemesterGPAModel;
 public abstract class GPADatabase extends RoomDatabase {
 
     public abstract FinalGPADao finalgpaDao();
-    public abstract SemesterGPADao sem1gpaDao();
-    public abstract SemesterGPADao sem2gpaDao();
-    public abstract SemesterGPADao sem3gpaDao();
-    public abstract SemesterGPADao sem4gpaDao();
-    public abstract SemesterGPADao sem5gpaDao();
-    public abstract SemesterGPADao sem6gpaDao();
-    public abstract SemesterGPADao sem7gpaDao();
-    public abstract SemesterGPADao sem8gpaDao();
-
+    public abstract SemesterGPADao semgpaDao();
 
     private static volatile GPADatabase INSTANCE;
 
