@@ -32,4 +32,7 @@ public interface FinalGPADao {
 
     @Query("SELECT * from finalgpa")
     LiveData<List<FinalGPA>> getGpa();
+
+    @Query("SELECT gpa from finalgpa where num=:num ")
+    LiveData<Float> getGpa(int num);
 }

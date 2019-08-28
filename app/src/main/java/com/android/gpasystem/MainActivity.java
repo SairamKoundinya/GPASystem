@@ -2,6 +2,7 @@ package com.android.gpasystem;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private FinalGPAVM viewModel;
 
     private ActivityMainBinding binding;
+    private List<FinalGPA> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(allgpa.size()!=0)
                    setTextValues(allgpa);
+                list=allgpa;
             }
         });
     }
@@ -84,20 +88,27 @@ public class MainActivity extends AppCompatActivity {
     public void getGPA(View v){
         final int num=Integer.parseInt(v.getTag().toString());
         final AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        final EditText view=(EditText)getLayoutInflater().inflate(R.layout.editdialog,null);
-        builder.setTitle("Semester "+num+" EditBox");
-        builder.setMessage("Enter here sem"+num+" G.P.A");
+        View view=getLayoutInflater().inflate(R.layout.cgpa_edit,null);
         builder.setView(view);
+        final EditText edittext=view.findViewById(R.id.value);
+        edittext.setText(String.valueOf(list.get(num-1).getGpa()));
         builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-               viewModel.update(num,Float.parseFloat(view.getText().toString()));
+               viewModel.update(num,Float.parseFloat(edittext.getText().toString()));
             }
         });
         builder.setNegativeButton(R.string.cancel,null);
         builder.create();
         builder.show();
+        view.findViewById(R.id.clear).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                edittext.getText().clear();
+            }
+        });
+
     }
 
 

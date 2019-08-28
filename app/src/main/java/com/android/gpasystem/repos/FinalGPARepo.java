@@ -19,11 +19,17 @@ public class FinalGPARepo {
 
     private FinalGPADao mgpadao;
     private LiveData<List<FinalGPA>> mAllGpa;
+    private LiveData<Float> sgpa;
 
    public FinalGPARepo(Application application) {
         GPADatabase db = GPADatabase.getDatabase(application);
         mgpadao = db.finalgpaDao();
         mAllGpa = mgpadao.getGpa();
+    }
+    public FinalGPARepo(Application application,int id) {
+        GPADatabase db = GPADatabase.getDatabase(application);
+        mgpadao = db.finalgpaDao();
+        sgpa = mgpadao.getGpa(id);
     }
 
     public LiveData<List<FinalGPA>> getGpa() {
@@ -33,6 +39,10 @@ public class FinalGPARepo {
 
     public void update (int num,float gpa) {
         new insertAsyncTask(mgpadao).execute(new FinalGPA(num,gpa));
+    }
+
+    public LiveData<Float> getSGPA() {
+       return sgpa;
     }
 
     private static class insertAsyncTask extends AsyncTask<FinalGPA, Void, Void> {

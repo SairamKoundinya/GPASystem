@@ -27,6 +27,7 @@
             <ImageView
                 android:layout_width="0dp"
                 android:src="@drawable/previous"
+                android:id="@+id/prevoius"
                 android:layout_margin="10dp"
                 android:layout_weight="0.2"
                 android:layout_height="match_parent"
@@ -40,6 +41,7 @@
                 android:layout_weight="0.8"
                 android:layout_height="match_parent" />
                 <ImageView
+                    android:id="@+id/next"
                     android:layout_width="0dp"
                     android:layout_margin="10dp"
                     android:src="@drawable/next"
@@ -48,8 +50,44 @@
                     android:contentDescription="@string/right" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_height="40dp">
 
-
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_margin="7dp"
+                android:src="@drawable/back"
+                android:onClick="back"
+                android:contentDescription="@string/back"
+                android:layout_weight="0.15"
+                android:tint="@color/colorPrimary"
+                android:layout_height="match_parent" />
+            <TextView
+                android:background="@color/colorPrimary"
+                android:id="@+id/sgpa"
+                android:layout_width="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+                android:layout_weight="0.7"
+                android:textStyle="bold"
+                android:textColor="@color/white5"
+                android:gravity="center"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:src="@drawable/pdf"
+                android:onClick="extract"
+                android:tint="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_margin="7dp"
+                android:layout_weight="0.15"
+                android:contentDescription="@string/extract"
+                android:layout_height="match_parent" />
+        </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_margin="10dp"
@@ -81,6 +119,7 @@
                     android:text="@string/c"
                     android:layout_height="match_parent" />
             </LinearLayout>
+
         <TableLayout
             android:id="@+id/tablelayout"
             android:layout_marginRight="10dp"
@@ -89,6 +128,16 @@
             android:layout_height="wrap_content">
 
         </TableLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:id="@+id/fab"
+            android:backgroundTint="@color/colorPrimary"
+            android:contentDescription="@string/add"
+            android:src="@drawable/add"
+            android:layout_margin="10dp"
+            android:layout_gravity="end|bottom"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

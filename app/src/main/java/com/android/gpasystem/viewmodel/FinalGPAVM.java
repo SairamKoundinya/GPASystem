@@ -21,13 +21,22 @@ public class FinalGPAVM extends AndroidViewModel {
 
     private LiveData<List<FinalGPA>> mAllgpa;
 
+    private LiveData<Float> sgpa;
+
     public FinalGPAVM (Application application) {
         super(application);
         mRepository = new FinalGPARepo(application);
         mAllgpa = mRepository.getGpa();
     }
+    public FinalGPAVM (Application application,int id) {
+        super(application);
+        mRepository = new FinalGPARepo(application,id);
+        sgpa=mRepository.getSGPA();
+    }
 
     public LiveData<List<FinalGPA>> getAllGpa() { return mAllgpa; }
+
+    public LiveData<Float> getsgpa() { return sgpa; }
 
     public void update(int num,float gpa) {
 

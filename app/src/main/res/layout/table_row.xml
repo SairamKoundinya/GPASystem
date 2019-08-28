@@ -8,11 +8,16 @@
         android:layout_width="0dp"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
+        android:padding="2dp"
         android:layout_height="40dp"
         android:layout_weight="0.7"
         android:id="@+id/sname"
         android:background="@color/c1"
         android:gravity="center"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:scrollHorizontally="true"
+        android:marqueeRepeatLimit="marquee_forever"
                 />
         <TextView
             android:id="@+id/marks"

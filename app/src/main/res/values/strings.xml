@@ -7,6 +7,7 @@
     <string name="sem4">IV Sem</string>
     <string name="semester_1">Semester 1</string>
     <string name="edit">edit</string>
+    <string name="create">Create</string>
     <string name="delete">delete</string>
     <string name="cancel">cancel</string>
     <string name="semester_2">Semester 2</string>
@@ -24,5 +25,14 @@
     <string name="subject_name">Subject</string>
     <string name="g">G</string>
     <string name="c">C</string>
+    <string name="sgpa">Update S.G.P.A</string>
+    <string name="diplaysgpa">S.G.P.A </string>
+    <string name="Updatesub">Update Subject Name</string>
+    <string name="Entersub">Enter Subject</string>
+    <string name="entergrade">Update Grade</string>
+    <string name="entercredits">Update Credits</string>
+    <string name="add">Add</string>
+    <string name="back">back</string>
+    <string name="extract">extract</string>
 
 </resources>

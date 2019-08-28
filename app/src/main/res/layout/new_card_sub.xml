@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:text="@string/Entersub"
+            android:gravity="center"
+            android:textColor="@color/white5"
+            android:layout_weight="0.7"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.15"
+            android:textStyle="bold"
+            android:textColor="@color/white5"
+            android:gravity="center"
+            android:text="@string/g"
+            android:layout_height="match_parent" />
+        <TextView
+            android:textColor="@color/white5"
+            android:layout_width="0dp"
+            android:layout_weight="0.15"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="@string/c"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="40dp">
+
+        <EditText
+            android:id="@+id/sub"
+            android:inputType="text"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:layout_weight="0.7"
+            android:layout_height="match_parent" />
+        <EditText
+            android:id="@+id/mark"
+            android:inputType="number"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_weight="0.15"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <EditText
+            android:id="@+id/credit"
+            android:textStyle="bold"
+            android:inputType="number"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="0dp"
+            android:layout_weight="0.15"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>
