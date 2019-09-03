@@ -129,13 +129,9 @@ public class SemesterGPA extends AppCompatActivity {
 
         float sumcredits=0.0f,total=0.0f;
         for(SemesterGPAModel iterator:list){
-
-            int marks=iterator.getMarks();
             int credits=iterator.getCredits();
-            if(marks!=0 && credits!=0){
-                total+=marks*credits;
+                total+=iterator.getMarks()*credits;
                 sumcredits+=credits;
-            }
         }
         if(sumcredits!=0) {
             float sgpa = total / sumcredits;
@@ -160,6 +156,7 @@ public class SemesterGPA extends AppCompatActivity {
         switch (tag.charAt(0)){
             case 'S': edittext.setInputType(InputType.TYPE_CLASS_TEXT);
                 edittext.setText(((TextView)v).getText());
+                edittext.setSelection(edittext.getText().length());
             textView.setText(R.string.Updatesub); break;
             case 'M': textView.setText(R.string.entergrade); edittext.setInputType(InputType.TYPE_CLASS_NUMBER); break;
             case 'C': textView.setText(R.string.entercredits); edittext.setInputType(InputType.TYPE_CLASS_NUMBER); break;
