@@ -13,8 +13,7 @@ public class AppGuide extends AppCompatActivity {
         setContentView(R.layout.activity_app_guide);
 
         try {getSupportActionBar().hide();}
-        catch (NullPointerException e){
-            Log.e("Exception","null");}
+        catch (NullPointerException e){ Log.e("Exception","null");}
 
     }
 

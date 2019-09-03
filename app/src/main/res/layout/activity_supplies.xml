@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context="com.android.gpasystem.Supplies">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_height="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:src="@drawable/previous"
+                    android:layout_margin="5dp"
+                    android:onClick="back"
+                    android:contentDescription="@string/back"
+                    android:layout_weight="0.1"
+                    android:tint="@color/colorPrimary"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            android:layout_height="40dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:text="@string/subject_name"
+                android:gravity="center"
+                android:textColor="@color/white5"
+                android:layout_weight="0.7"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.15"
+                android:textColor="@color/white5"
+                android:gravity="center"
+                android:text="@string/sem"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:textColor="@color/white5"
+                android:layout_width="0dp"
+                android:layout_weight="0.15"
+                android:gravity="center"
+                android:text="@string/c"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:id="@+id/tablelayout"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TableLayout>
+        </ScrollView>
+        <TextView
+            android:id="@+id/supply"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="@string/no_supplies_yet"
+            android:textStyle="italic"
+            android:layout_height="30dp" />
+    </LinearLayout>
+</layout>

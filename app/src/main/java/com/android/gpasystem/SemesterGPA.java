@@ -34,6 +34,7 @@ public class SemesterGPA extends AppCompatActivity {
     private  int position;
     private  FinalGPAVM vModel;
     private InputMethodManager inputMethodManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

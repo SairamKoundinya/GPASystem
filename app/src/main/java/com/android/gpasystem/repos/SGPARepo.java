@@ -27,10 +27,16 @@ public class SGPARepo {
         mgpadao=db.semgpaDao();
         mAllGpa = mgpadao.getSGpa(i);
     }
+    public SGPARepo(Application application) {
+        GPADatabase db = GPADatabase.getDatabase(application);
+        mgpadao=db.semgpaDao();
+        mAllGpa = mgpadao.getSupplies();
+    }
 
     public LiveData<List<SemesterGPAModel>> getSGpa() {
         return mAllGpa;
     }
+
 
     public void updateSubname (int id,String subname) {
         new insertAsyncTask(mgpadao,1).execute(new SemesterGPAModel(id,subname,0,0,semnum));

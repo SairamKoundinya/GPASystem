@@ -156,6 +156,9 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.guide) {
            startActivity(new Intent(this,AppGuide.class));
         }
+        else  if (id == R.id.supplies) {
+            startActivity(new Intent(this,Supplies.class));
+        }
         return super.onOptionsItemSelected(item);
     }
 

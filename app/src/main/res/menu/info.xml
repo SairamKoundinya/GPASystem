@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
   <item
+      android:id="@+id/supplies"
+      android:icon="@drawable/supplies"
+      android:title="@string/supplies"
+      app:showAsAction="ifRoom"/>
+  <item
         android:id="@+id/guide"
         android:icon="@drawable/guide"
         android:title="@string/info"

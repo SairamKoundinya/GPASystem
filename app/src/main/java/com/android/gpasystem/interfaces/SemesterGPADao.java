@@ -35,4 +35,9 @@ public interface SemesterGPADao {
 
     @Query("SELECT * from sgpa where sumnum=:sumnum")
     LiveData<List<SemesterGPAModel>> getSGpa(int sumnum);
+
+    @Query("SELECT * from sgpa where marks=0 and credits!=0 order by sumnum")
+    LiveData<List<SemesterGPAModel>> getSupplies();
+
+
 }

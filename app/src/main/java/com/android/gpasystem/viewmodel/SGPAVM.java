@@ -26,8 +26,13 @@ public class SGPAVM extends AndroidViewModel {
 
      SGPAVM (Application application,int i) {
         super(application);
-            mRepository = new SGPARepo(application,i);
+         mRepository = new SGPARepo(application,i);
          mAllgpa = mRepository.getSGpa();
+    }
+    SGPAVM (Application application) {
+        super(application);
+        mRepository = new SGPARepo(application);
+        mAllgpa = mRepository.getSGpa();
     }
 
     public LiveData<List<SemesterGPAModel>> getAllGpa() {

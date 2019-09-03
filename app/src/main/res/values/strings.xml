@@ -37,5 +37,8 @@
     <string name="semester_g_p_a">Semester G.P.A</string>
     <string name="info">info</string>
     <string name="application_guide">Application Guide</string>
+    <string name="supplies">Supplies</string>
+    <string name="sem">Sem</string>
+    <string name="no_supplies_yet">No Supplies yet!</string>
 
 </resources>
