@@ -34,5 +34,8 @@
     <string name="add">Add</string>
     <string name="back">back</string>
     <string name="extract">extract</string>
+    <string name="semester_g_p_a">Semester G.P.A</string>
+    <string name="info">info</string>
+    <string name="application_guide">Application Guide</string>
 
 </resources>

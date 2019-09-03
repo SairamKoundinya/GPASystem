@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SemesterGPA" >
-        </activity>
+        <activity android:name=".SemesterGPA"></activity>
+        <activity android:name=".AppGuide"></activity>
     </application>
 
 </manifest>

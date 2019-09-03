@@ -12,6 +12,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private FinalGPAVM viewModel;
 
     private ActivityMainBinding binding;
-    private List<FinalGPA> list;
+    //private List<FinalGPA> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(allgpa.size()!=0)
                    setTextValues(allgpa);
-                list=allgpa;
+                //list=allgpa;
             }
         });
     }
@@ -91,15 +93,33 @@ public class MainActivity extends AppCompatActivity {
         View view=getLayoutInflater().inflate(R.layout.cgpa_edit,null);
         builder.setView(view);
         final EditText edittext=view.findViewById(R.id.value);
-        edittext.setText(String.valueOf(list.get(num-1).getGpa()));
+        edittext.requestFocus();
+        final InputMethodManager inputMethodManager=(InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (inputMethodManager != null) {
+            inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED,InputMethodManager.HIDE_IMPLICIT_ONLY);
+        }
+        //  edittext.setText(String.valueOf(list.get(num-1).getGpa()));
         builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
+               if(edittext.getText().toString().length()!=0)
                viewModel.update(num,Float.parseFloat(edittext.getText().toString()));
+               else toastForEmpty();
+                if (inputMethodManager != null) {
+                    inputMethodManager.hideSoftInputFromWindow(edittext.getWindowToken(),0);
+                }
+
             }
         });
-        builder.setNegativeButton(R.string.cancel,null);
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (inputMethodManager != null) {
+                    inputMethodManager.hideSoftInputFromWindow(edittext.getWindowToken(),0);
+                }
+            }
+        });
         builder.create();
         builder.show();
         view.findViewById(R.id.clear).setOnClickListener(new View.OnClickListener() {
@@ -118,6 +138,29 @@ public class MainActivity extends AppCompatActivity {
         it.putExtra("sem",view.getTag().toString());
         startActivity(it);
     }
+    private void toastForEmpty() {
+        Toast toast=Toast.makeText(this,"Fields can't be empty",Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.info, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.guide) {
+           startActivity(new Intent(this,AppGuide.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
 }
 
 

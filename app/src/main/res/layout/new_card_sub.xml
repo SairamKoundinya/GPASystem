@@ -43,27 +43,19 @@
             android:id="@+id/sub"
             android:inputType="text"
             android:layout_width="0dp"
-            android:gravity="center"
-            android:textColor="@color/colorPrimary"
             android:layout_weight="0.7"
             android:layout_height="match_parent" />
         <EditText
             android:id="@+id/mark"
             android:inputType="number"
-            android:textStyle="bold"
             android:layout_width="0dp"
             android:layout_weight="0.15"
-            android:textColor="@color/colorPrimary"
-            android:gravity="center"
             android:layout_height="match_parent" />
         <EditText
             android:id="@+id/credit"
-            android:textStyle="bold"
             android:inputType="number"
-            android:textColor="@color/colorPrimary"
             android:layout_width="0dp"
             android:layout_weight="0.15"
-            android:gravity="center"
             android:layout_height="match_parent" />
     </LinearLayout>
 
