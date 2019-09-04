@@ -9,6 +9,7 @@
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
         android:padding="2dp"
+        android:onClick="update"
         android:layout_height="40dp"
         android:layout_weight="0.7"
         android:id="@+id/sname"
@@ -22,6 +23,7 @@
         <TextView
             android:id="@+id/marks"
             android:textStyle="bold"
+            android:onClick="update"
             android:gravity="center"
             android:background="@color/c2"
             android:layout_width="0dp"
@@ -33,6 +35,7 @@
         <TextView
             android:id="@+id/credits"
             android:textStyle="bold"
+            android:onClick="update"
             android:background="@color/c3"
             android:gravity="center"
             android:layout_width="0dp"

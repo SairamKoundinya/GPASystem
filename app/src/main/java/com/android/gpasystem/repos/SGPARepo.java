@@ -3,13 +3,9 @@ package com.android.gpasystem.repos;
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
-import android.util.Log;
 
-import com.android.gpasystem.SemesterGPA;
 import com.android.gpasystem.databases.GPADatabase;
-import com.android.gpasystem.interfaces.FinalGPADao;
 import com.android.gpasystem.interfaces.SemesterGPADao;
-import com.android.gpasystem.model.FinalGPA;
 import com.android.gpasystem.model.SemesterGPAModel;
 
 import java.util.List;

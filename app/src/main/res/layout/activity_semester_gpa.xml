@@ -2,76 +2,17 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-<variable name="semnum" type="java.lang.String"/>
-    </data>
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content"
-        tools:context="com.android.gpasystem.SemesterGPA">
+        tools:context="com.android.gpasystem.activities.SemesterGPA">
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_marginBottom="5dp"
-            android:layout_height="50dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            <ImageView
-                android:layout_width="0dp"
-                android:src="@drawable/previous"
-                android:layout_margin="5dp"
-                android:onClick="back"
-                android:contentDescription="@string/back"
-                android:layout_weight="0.1"
-                android:tint="@color/colorPrimary"
-                android:layout_height="match_parent" />
+       <include android:id="@+id/actionbar"
+           layout="@layout/customize_actionbar"/>
 
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="0dp"
-                android:layout_weight="0.9"
-               android:gravity="center"
-                android:textStyle="bold"
-                android:text="@{semnum}"
-                android:layout_height="match_parent" /></LinearLayout>
+        <include layout="@layout/subject_card"/>
 
-        </android.support.v7.widget.CardView>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_margin="10dp"
-                android:background="@color/colorPrimary"
-                android:orientation="horizontal"
-                android:layout_height="40dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:text="@string/subject_name"
-                    android:gravity="center"
-                    android:textColor="@color/white5"
-                    android:layout_weight="0.7"
-                    android:layout_height="match_parent" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="0.15"
-                    android:textStyle="bold"
-                    android:textColor="@color/white5"
-                    android:gravity="center"
-                    android:text="@string/g"
-                    android:layout_height="match_parent" />
-                <TextView
-                    android:textColor="@color/white5"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.15"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:text="@string/c"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

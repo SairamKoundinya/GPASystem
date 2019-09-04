@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:text="@string/subject_name"
+            android:gravity="center"
+            android:textColor="@color/white5"
+            android:layout_weight="0.7"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/midtext"
+            android:layout_width="0dp"
+            android:layout_weight="0.15"
+            android:textStyle="bold"
+            android:textColor="@color/white5"
+            android:gravity="center"
+            android:text="@string/g"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:textColor="@color/white5"
+            android:layout_width="0dp"
+            android:layout_weight="0.15"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/c"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</layout>

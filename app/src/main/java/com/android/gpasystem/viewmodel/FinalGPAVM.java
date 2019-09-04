@@ -28,7 +28,7 @@ public class FinalGPAVM extends AndroidViewModel {
         mRepository = new FinalGPARepo(application);
         mAllgpa = mRepository.getGpa();
     }
-    public FinalGPAVM (Application application,int id) {
+    FinalGPAVM (Application application,int id) {
         super(application);
         mRepository = new FinalGPARepo(application,id);
         sgpa=mRepository.getSGPA();
