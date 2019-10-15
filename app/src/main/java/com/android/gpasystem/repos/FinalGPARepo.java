@@ -1,9 +1,8 @@
 package com.android.gpasystem.repos;
 
 import android.app.Application;
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.LiveData;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.android.gpasystem.databases.GPADatabase;
 import com.android.gpasystem.interfaces.FinalGPADao;

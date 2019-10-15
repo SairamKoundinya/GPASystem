@@ -1,14 +1,10 @@
 package com.android.gpasystem.viewmodel;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LiveData;
-import android.util.Log;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 
-import com.android.gpasystem.interfaces.SemesterGPADao;
-import com.android.gpasystem.model.FinalGPA;
 import com.android.gpasystem.model.SemesterGPAModel;
-import com.android.gpasystem.repos.FinalGPARepo;
 import com.android.gpasystem.repos.SGPARepo;
 
 import java.util.List;

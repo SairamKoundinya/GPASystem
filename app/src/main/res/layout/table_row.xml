@@ -12,7 +12,6 @@
         android:onClick="update"
         android:layout_height="40dp"
         android:layout_weight="0.7"
-        android:id="@+id/sname"
         android:background="@color/c1"
         android:gravity="center"
         android:singleLine="true"
@@ -21,7 +20,6 @@
         android:marqueeRepeatLimit="marquee_forever"
                 />
         <TextView
-            android:id="@+id/marks"
             android:textStyle="bold"
             android:onClick="update"
             android:gravity="center"
@@ -33,7 +31,6 @@
             android:layout_height="40dp"
             />
         <TextView
-            android:id="@+id/credits"
             android:textStyle="bold"
             android:onClick="update"
             android:background="@color/c3"

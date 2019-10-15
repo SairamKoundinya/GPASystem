@@ -1,10 +1,10 @@
 package com.android.gpasystem.activities;
 
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
-import android.databinding.DataBindingUtil;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.databinding.DataBindingUtil;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +15,6 @@ import com.android.gpasystem.R;
 import com.android.gpasystem.databinding.ActivitySuppliesBinding;
 import com.android.gpasystem.model.SemesterGPAModel;
 import com.android.gpasystem.viewmodel.SGPAVM;
-import com.android.gpasystem.viewmodel.SGPAVmFactory;
 
 import java.util.List;
 
